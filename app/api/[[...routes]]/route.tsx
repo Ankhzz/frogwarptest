@@ -1,14 +1,30 @@
 /** @jsxImportSource frog/jsx */
 
+import * as dotenv from 'dotenv'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev'
 // import { neynar } from 'frog/hubs'
 import { handle } from 'frog/next'
 import { serveStatic } from 'frog/serve-static'
 
+import {
+  Box,
+  Column,
+  Columns,
+  Heading,
+  Text,
+  VStack,
+  vars, 
+} from '@/app/components'
+
+
+dotenv.config();
+
+
 const app = new Frog({
   assetsPath: '/',
   basePath: '/api',
+  ui: { vars },
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
   title: 'Frog Frame',
